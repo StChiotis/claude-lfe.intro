@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude-LFE — Introduction</title>
+<link rel="stylesheet" href="scenes/lfe.css?v=2">
+<link rel="stylesheet" href="scenes/deck.css?v=24">
+</head>
+<body>
+
+<deck-stage width="1920" height="1080" no-rail>
+
+  <!-- ============ SCENE 1 · TITLE (end-card) ============ -->
+  <section id="s1" data-label="Title">
+    <div class="stage1 grain"></div>
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="r-fade">CLAUDE&nbsp;·&nbsp;LFE</span>
+      <span class="r-fade" style="--d:.2s">REV.01 — INTRODUCTION</span>
+      <span class="on r-fade" style="--d:.4s">● SYSTEM NOMINAL</span>
+    </div>
+
+    <div class="wrap">
+      <div>
+        <div class="micro r-up">Library-First Engineering</div>
+        <h1 class="r-up" style="--d:.2s">Claude<span class="b">-LFE</span></h1>
+        <div class="tag r-up" style="--d:.5s">Making AI <b>reliable</b>, session after session.</div>
+        <div class="rule r-grow" style="--d:.85s"></div>
+      </div>
+
+      <div class="gwrap r-fade" style="--d:.6s">
+        <svg class="gauge" viewBox="0 0 200 200">
+          <defs>
+            <radialGradient id="faceG" cx="50%" cy="42%" r="66%">
+              <stop offset="0" stop-color="#141A20"/>
+              <stop offset="1" stop-color="#0A0E12"/>
+            </radialGradient>
+          </defs>
+
+          <!-- square instrument housing + corner bolts (marine flange-mount) -->
+          <rect x="14" y="14" width="172" height="172" rx="16" fill="#10151A" stroke="#2A333D" stroke-width="1.5"/>
+          <rect x="21" y="21" width="158" height="158" rx="11" fill="none" stroke="#1B232B" stroke-width="1"/>
+          <g fill="#161C22" stroke="#3A4650" stroke-width="1.2">
+            <circle cx="32" cy="32" r="6"/><circle cx="168" cy="32" r="6"/>
+            <circle cx="32" cy="168" r="6"/><circle cx="168" cy="168" r="6"/>
+          </g>
+          <g stroke="#46535e" stroke-width="1">
+            <line x1="29" y1="32" x2="35" y2="32"/><line x1="165" y1="32" x2="171" y2="32"/>
+            <line x1="29" y1="168" x2="35" y2="168"/><line x1="165" y1="168" x2="171" y2="168"/>
+          </g>
+
+          <!-- bezel + dial face -->
+          <circle cx="100" cy="100" r="78" fill="none" stroke="#0A0E12" stroke-width="8"/>
+          <circle cx="100" cy="100" r="74" fill="url(#faceG)" stroke="#2A333D" stroke-width="1"/>
+
+          <!-- scale: dark track, steel safe band, red low-pressure danger -->
+          <path d="M 48.04 130 A 60 60 0 1 1 151.96 130" fill="none" stroke="#222B33" stroke-width="6"/>
+          <path d="M 42.94 81.46 A 60 60 0 1 1 151.96 130" fill="none" stroke="#4E6B80" stroke-width="6"/>
+          <path d="M 48.04 130 A 60 60 0 0 1 40.3 93.7" fill="none" stroke="#E8623A" stroke-width="6"/>
+
+          <!-- major ticks -->
+          <g stroke="#5A6670" stroke-width="1.6">
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(-120 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(-90 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(-60 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(-30 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(0 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(30 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(60 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(90 100 100)"/>
+            <line x1="100" y1="36" x2="100" y2="48" transform="rotate(120 100 100)"/>
+          </g>
+          <!-- minor ticks -->
+          <g stroke="#39444E" stroke-width="1">
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(-105 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(-75 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(-45 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(-15 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(15 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(45 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(75 100 100)"/>
+            <line x1="100" y1="41" x2="100" y2="48" transform="rotate(105 100 100)"/>
+          </g>
+
+          <!-- dial face text -->
+          <text x="100" y="80" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="2.4" fill="#8A94A0">MAIN ENGINE</text>
+          <text x="100" y="140" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="600" letter-spacing="1" fill="#FF8A3D">RELIABILITY</text>
+          <text x="100" y="152" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8" letter-spacing="1.5" fill="#5A646E">bar</text>
+          <text x="45" y="151" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#7E8893">0</text>
+          <text x="155" y="151" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" fill="#7E8893">10</text>
+          <text x="57" y="121" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="6.5" letter-spacing="1" fill="#E8623A">LOW</text>
+
+          <!-- needle (pivots at hub) -->
+          <g class="needle">
+            <polygon points="100,44 97.5,104 102.5,104" fill="#FF8A3D"/>
+            <polygon points="97.5,104 102.5,104 100,116" fill="#7E4A26"/>
+          </g>
+          <circle cx="100" cy="100" r="8.5" fill="#1D242C" stroke="#FF8A3D" stroke-width="2"/>
+          <circle cx="100" cy="100" r="2.5" fill="#FF8A3D"/>
+        </svg>
+        <div class="gread">
+          <div class="v">
+</div>
+          <div class="u">by design</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower r-up" style="--d:1s">
+      <div class="bar"></div>
+      <div>
+        <div class="nm">Stylianos Chiotis</div>
+        <div class="rl">AN ENGINEER WHO LOVES TO LEARN, EXPERIMENT AND DOCUMENT.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 2 · WHO & WHY ============ -->
+  <section id="s2" data-label="Who & Why">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>WHO &amp; WHY</span>
+      <span class="on">● SAME RULE · HIGHER STAKES</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Thirteen years of one rule</div>
+      <h2 class="r-up" style="--d:.12s">Reliability, pointed at a wilder input.</h2>
+    </div>
+
+    <div class="pipe">
+      <div class="track"><div class="flow"></div></div>
+    </div>
+    <div class="stations">
+      <div class="stn r-up" style="--d:.3s">
+        <div class="disc"><span class="ix">01</span>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#6FA6CC" stroke-width="2"><circle cx="30" cy="30" r="20"/><circle cx="30" cy="30" r="8"/><line x1="30" y1="2" x2="30" y2="14"/><line x1="30" y1="46" x2="30" y2="58"/></svg>
+        </div>
+        <div class="ttl">Marine engine rooms</div>
+        <div class="sub">"mostly works" sinks ships</div>
+      </div>
+      <div class="stn r-up" style="--d:.5s">
+        <div class="disc"><span class="ix">02</span>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#6FA6CC" stroke-width="2"><polygon points="30,6 52,18 52,42 30,54 8,42 8,18"/><circle cx="30" cy="30" r="6" fill="#6FA6CC" stroke="none"/></svg>
+        </div>
+        <div class="ttl">Biotech &amp; genetics</div>
+        <div class="sub">regulated · staged pipelines</div>
+      </div>
+      <div class="stn r-up" style="--d:.7s">
+        <div class="disc"><span class="ix">03</span>
+          <svg viewBox="0 0 60 60" fill="none" stroke="#FF8A3D" stroke-width="2"><line x1="30" y1="14" x2="14" y2="42"/><line x1="30" y1="14" x2="46" y2="42"/><line x1="14" y1="42" x2="46" y2="42"/><circle cx="30" cy="14" r="5" fill="#FF8A3D" stroke="none"/><circle cx="14" cy="42" r="5" fill="#FF8A3D" stroke="none"/><circle cx="46" cy="42" r="5" fill="#FF8A3D" stroke="none"/></svg>
+        </div>
+        <div class="ttl">Agentic AI</div>
+        <div class="sub">a wilder kind of input</div>
+      </div>
+    </div>
+    <div class="ztol r-fade" style="--d: .9s; line-height: 1.4; height: 26px">zero-error tolerance — the gauge that rides every station</div>
+    <div class="rider r-fade" style="--d:1s">
+      <div class="badge"><span class="dot"></span></div>
+    </div>
+
+    <div class="foot">
+      <div class="big r-up" style="--d:1.1s">A full-time dad who can't <b>babysit an AI.</b></div>
+      <div class="mn r-up" style="--d:1.2s">it needs to <b>behave</b><br>when I'm not watching</div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 3 · THE PROBLEM (the beast) ============ -->
+  <section id="s3" data-label="The Problem">
+    <div class="stage3"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="am">THE PROBLEM</span>
+      <span>● THE BEAST, UNLEASHED</span>
+    </div>
+
+    <div class="beast">
+      <div class="core c2"></div>
+      <div class="core c1"></div>
+      <div class="flick"></div>
+    </div>
+
+    <div class="left">
+      <div class="k r-up">Session one is magic. By session five…</div>
+      <h2 class="r-up" style="--d:.15s">The beast.</h2>
+      <div class="subline r-up" style="--d:.3s">Survivable in a weekend hack. <b>Fatal in a product you ship.</b></div>
+      <div class="pains">
+        <div class="pain r-up" style="--d:.55s"><span class="x"></span><span class="t">Loses your <b>intent</b> — drifts further every session</span></div>
+        <div class="pain r-up" style="--d:.75s"><span class="x"></span><span class="t"><b>Re-litigates</b> decisions it already made</span></div>
+        <div class="pain r-up" style="--d:.95s"><span class="x"></span><span class="t"><b>Invents logic</b> you never asked for</span></div>
+        <div class="pain r-up" style="--d:1.15s"><span class="x"></span><span class="t"><b>Sprawls into spaghetti</b> as it grows</span></div>
+        <div class="pain r-up" style="--d:1.35s"><span class="x"></span><span class="t">One wrong move quietly <b>corrupts everything downstream</b></span></div>
+      </div>
+    </div>
+    <div class="wild r-fade" style="--d:1.6s">POWERFUL · FAST
+...AND WILD</div>
+  </section>
+
+  <!-- ============ SCENE 3b · THE FRAME (the real bottleneck) ============ -->
+  <section id="s3b" data-label="The Frame">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="am">THE FRAME</span>
+      <span>● THE REAL BOTTLENECK</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">What everyone's getting wrong</div>
+      <h2 class="r-up" style="--d:.12s">The bottleneck isn't capability. <span class="am">It's trust.</span></h2>
+    </div>
+
+    <div class="subline3b r-up" style="--d:.3s">Every AI coding tool is racing on speed. Nobody's optimizing for the thing that actually blocks shipping agent-built software — <b>trusting it to behave when you're not watching.</b></div>
+
+    <div class="subnote3b r-up" style="--d:.42s">And trust isn't asserted — <span class="am">it's measured.</span></div>
+
+    <div class="meters">
+      <div class="meter speed r-up" style="--d:.5s">
+        <div class="lab"><span class="nm">Speed</span><span class="cap">where everyone's racing</span></div>
+        <div class="gaugebar">
+          <div class="track"><div class="fill"></div><div class="ticks"></div><div class="marker"></div><div class="mword">MAXED</div></div>
+        </div>
+      </div>
+
+      <div class="meter trust r-up" style="--d:.7s">
+        <div class="lab"><span class="nm">Trust</span><span class="cap">the actual bottleneck · wide open</span></div>
+        <div class="gaugebar">
+          <div class="track"><div class="fill"></div><div class="ticks"></div><div class="marker"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 4 · THE THESIS ============ -->
+  <section id="s4" data-label="The Thesis">
+    <div class="stage4"></div>
+    <div class="center">
+      <div class="k r-fade">The entire idea</div>
+      <div class="stmt r-up" style="--d:.3s">LFE makes the AI deliver great products — <span class="hl">reliably, session after session</span>. Everything after this is just<br><span class="am">how it holds that line.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 5 · THE PHILOSOPHY ============ -->
+  <section id="s5" data-label="Philosophy">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>THE PHILOSOPHY</span>
+      <span class="on">● THREE COMMITMENTS</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">What it's built on</div>
+      <h2 class="r-up" style="--d:.12s">Three commitments.</h2>
+    </div>
+
+    <div class="cols">
+      <div class="col r-up" style="--d:.3s">
+        <div class="ix">01 — JUDGMENT</div>
+        <div class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="#6FA6CC" stroke-width="2"><circle cx="32" cy="26" r="16"/><circle cx="32" cy="26" r="5" fill="#6FA6CC" stroke="none"/><path d="M18 56 Q32 40 46 56"/></svg></div>
+        <h3>Thinking</h3>
+        <div class="in">in the Human</div>
+        <div class="sub">the human decides</div>
+      </div>
+      <div class="col r-up" style="--d:.45s">
+        <div class="ix">02 — VOLUME</div>
+        <div class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="#6FA6CC" stroke-width="2"><rect x="20" y="20" width="24" height="24" transform="rotate(45 32 32)"/><circle cx="32" cy="32" r="5" fill="#6FA6CC" stroke="none"/></svg></div>
+        <h3>Processing</h3>
+        <div class="in">in the AI</div>
+        <div class="sub">the AI executes</div>
+      </div>
+      <div class="col truth r-up" style="--d:.6s">
+        <div class="ix">03 — SOURCE OF TRUTH</div>
+        <div class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="#FF8A3D" stroke-width="2"><rect x="16" y="12" width="32" height="40"/><line x1="24" y1="24" x2="40" y2="24"/><line x1="24" y1="32" x2="40" y2="32"/><line x1="24" y1="40" x2="34" y2="40"/></svg></div>
+        <h3>Truth</h3>
+        <div class="in">in the Documentation</div>
+        <div class="sub">the single source of truth</div>
+      </div>
+    </div>
+
+    <div class="foot r-up" style="--d:.85s">If the code disagrees with the docs — <b>the code is what's <span class="am">broken</span>.</b></div>
+  </section>
+
+  <!-- ============ SCENE 6 · THREE LAYERS ============ -->
+  <section id="s6" data-label="Three Layers">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>TAMING THE BEAST</span>
+      <span class="on">● THREE LAYERS</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">It takes three</div>
+      <h2 class="r-up" style="--d:.12s">The layers.</h2>
+    </div>
+
+    <div class="layers">
+      <div class="layer r-up" style="--d:.3s">
+        <div class="no">01</div>
+        <div class="nm">Protocol<span>routes the work through specialist roles</span></div>
+        <div class="role">the route</div>
+      </div>
+      <div class="layer mid r-up" style="--d:.45s">
+        <div class="no">02</div>
+        <div class="nm">Enforcement<span>physically constrains what can go wrong</span></div>
+        <div class="role">the leash</div>
+      </div>
+      <div class="layer r-up" style="--d:.6s">
+        <div class="no">03</div>
+        <div class="nm">Provenance<span>the memory, and the truth it's anchored to</span></div>
+        <div class="role">memory + truth</div>
+      </div>
+    </div>
+    <div class="note r-fade" style="--d:.85s">quickly, through each →</div>
+  </section>
+
+  <!-- ============ SCENE 7 · LAYER 1 · PROTOCOL ============ -->
+  <section id="s7" data-label="Protocol">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="on">LAYER 01 — PROTOCOL</span>
+      <span>● THE ROUTE</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Four specialist roles</div>
+      <h2 class="r-up" style="--d:.12s">Work flows down a line.</h2>
+    </div>
+
+    <div class="flow">
+      <div class="chain">
+        <div class="persona r-up" style="--d:.35s"><div class="ix">01</div><div class="nm">Architect</div><div class="vb">plans</div></div>
+        <div class="arrow r-fade" style="--d:.5s">→</div>
+        <div class="persona r-up" style="--d:.55s"><div class="ix">02</div><div class="nm">Builder</div><div class="vb">builds</div></div>
+        <div class="arrow r-fade" style="--d:.7s">→</div>
+        <div class="persona r-up" style="--d:.75s"><div class="ix">03</div><div class="nm">Inspector</div><div class="vb">verifies</div></div>
+        <div class="arrow r-fade" style="--d:.9s">→</div>
+        <div class="persona r-up" style="--d:.95s"><div class="ix">04</div><div class="nm">Archivist</div><div class="vb">records</div></div>
+      </div>
+      <div class="loop r-fade" style="--d:1.1s"></div>
+      <div class="badge2 r-fade" style="--d:1.2s"><span class="lp">↺</span> max 2 — then escalate</div>
+    </div>
+
+    <div class="slices r-fade" style="--d:1.05s">
+      <i style="height:40px"></i><i style="height:64px"></i><i style="height:30px"></i><i style="height:52px"></i>
+      <span class="lab">big work → small, demoable slices</span>
+    </div>
+    <div class="foot7 r-up" style="--d:1.3s">A process that can't converge<br><b>shouldn't be allowed to spin.</b></div>
+  </section>
+
+  <!-- ============ SCENE 7b · THE FULL PIPELINE ============ -->
+  <section id="s7b" data-label="Full Pipeline">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="on">LAYER 01 — THE FULL PIPELINE</span>
+      <span>● THE WHOLE MACHINE</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">22 SKILLS · 4 ROLES · 1 LINE</div>
+      <h2 class="r-up" style="--d:.12s">The whole machine.</h2>
+    </div>
+
+    <div class="pipewrap">
+      <div class="lanes">
+        <div class="brainrail r-up" style="--d:.22s">
+          <span class="bt">🫵 The Brain</span>
+          <span class="bd">on the wheel throughout — <b>approve · redirect · break-glass anywhere</b></span>
+          <span class="pin">persistent oversight</span>
+        </div>
+
+        <div class="lane r-up" style="--d:.3s; animation-delay:0s">
+          <div class="who"><span class="nm">Architect</span><span class="ro">plans the work · owns both gates</span></div>
+          <div class="steps">
+            <span class="chip">grill</span><span class="sep">→</span>
+            <span class="chip">to-prd</span><span class="sep">→</span>
+            <span class="chip">to-issues</span><span class="sep">→</span>
+            <span class="ig"><span class="dia"></span><span class="gl">mandatory sign-off</span><span class="gx">slice</span></span><span class="sep">→</span>
+            <span class="chip">architect</span><span class="sep">→</span>
+            <span class="ig"><span class="dia"></span><span class="gl">mandatory sign-off</span><span class="gx">plan</span></span><span class="sep">→</span>
+            <span class="chip">plan-critique</span>
+          </div>
+        </div>
+
+        <div class="lane r-up" style="--d:.45s; animation-delay:2.3s">
+          <div class="who"><span class="nm">Builder</span><span class="ro">builds the slice</span></div>
+          <div class="steps">
+            <span class="chip">builder</span><span class="sep">→</span>
+            <span class="chip">tdd</span>
+          </div>
+        </div>
+
+        <div class="lane r-up" style="--d:.6s; animation-delay:4.6s">
+          <div class="who"><span class="nm">Inspector</span><span class="ro">verifies the work</span></div>
+          <div class="steps">
+            <span class="chip">zoom-out</span><span class="sep">→</span>
+            <span class="chip">inspector</span><span class="sep">→</span>
+            <span class="cluster"><span class="clab">verify</span><span class="chip am">security</span><span class="chip am">perf</span><span class="chip am">complexity</span><span class="chip am">dep</span><span class="chip am">mutation</span></span><span class="sep">→</span>
+            <span class="chip">diagnose</span><span class="cond">(on fail → builder)</span>
+          </div>
+        </div>
+
+        <div class="lane r-up" style="--d:.75s; animation-delay:6.9s">
+          <div class="who"><span class="nm">Archivist</span><span class="ro">records the truth</span></div>
+          <div class="steps">
+            <span class="chip">archivist</span><span class="sep">→</span>
+            <span class="chip">cleanup</span>
+          </div>
+          <div class="loopback r-fade" style="--d:1.1s">
+            <div class="b2">↺ max 2 → escalate</div>
+          </div>
+        </div>
+
+        <div class="plansrow r-fade" style="--d:.95s">
+          <span class="pp">.plans/</span>
+          <span class="pd">each step writes a file the next step reads</span>
+          <span class="ticks"><i></i><i></i><i></i><i></i></span>
+        </div>
+
+        <div class="exhead r-fade" style="--d:1.05s">Exceptions — bypass the full line</div>
+        <div class="exceptions">
+          <div class="exlane scout r-up" style="--d:1.1s">
+            <span class="nm">Scout</span>
+            <div class="body">
+              <div class="flow">branch off the complexity gate: <b>scout → Archivist</b></div>
+              <div class="sub">≤3 files · no structural change</div>
+            </div>
+          </div>
+          <div class="exlane force r-up" style="--d:1.2s">
+            <span class="dia"></span>
+            <span class="nm">LFE-FORCE</span>
+            <div class="body">
+              <div class="flow">break-glass from anywhere: <b>patch now → log Protocol Debt</b></div>
+              <div class="sub">next session reconciles the debt</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footrow r-fade" style="--d:1.3s">
+          <span class="entrynote"><b>Entry:</b> lfe-boot → complexity gate (full pipeline vs. minor fix) &nbsp;·&nbsp; <b>+</b> scheduled hygiene sweep every 5 sessions</span>
+          <span class="vscode">→ live in VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 8 · LAYER 2 · ENFORCEMENT ============ -->
+  <section id="s8" data-label="Enforcement">
+    <div class="stage8"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="am">LAYER 02 — ENFORCEMENT</span>
+      <span>● THE LEASH</span>
+    </div>
+    <div class="head8">
+      <div class="k r-fade">The part most frameworks don't have</div>
+      <h2 class="r-up" style="--d:.15s">A request is a suggestion. <b>A rail is a wall.</b></h2>
+    </div>
+
+    <div class="rail"></div>
+    <div class="flare"></div>
+
+    <div class="caption cl r-fade" style="--d:.6s"><span class="ar">&larr;</span><br>constrains the AI<br>can't write outside its lane</div>
+    <div class="caption cr r-fade" style="--d:.6s">constrains you<br>can't run steps out of order<br><span class="ar">&rarr;</span></div>
+
+    <div class="mass left r-up" style="--d:.4s">
+      <div class="tag">The AI</div>
+      <div class="block"><span class="blocklabel">write →</span></div>
+      <div class="sub">execution</div>
+    </div>
+    <div class="mass right r-up" style="--d:.5s">
+      <div class="tag">The Operator</div>
+      <div class="block"><span class="blocklabel">← step 4</span></div>
+      <div class="sub">that's you</div>
+    </div>
+
+    <div class="subline8 r-fade" style="--d:.92s">And the reasoning checks aren't trusted — <b>they're graded.</b> Planted-defect fixtures · measured catch-rate · gated against regression.</div>
+    <div class="footer8 r-fade" style="--d:1s"><span class="hot">~1000</span> tests &nbsp;·&nbsp; guarding the rails, the prompt-discipline, and the checks' catch-rate</div>
+  </section>
+
+  <!-- ============ SCENE 9 · LAYER 3 · PROVENANCE ============ -->
+  <section id="s9" data-label="Provenance">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="on">LAYER 03 — PROVENANCE</span>
+      <span>● THE MEMORY + TRUTH</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">A structured library</div>
+      <h2 class="r-up" style="--d:.12s">The truth has an address.</h2>
+    </div>
+
+    <div class="lib r-up" style="--d:.35s">
+      <div class="desk">
+        <span class="dl">Reception — front-desk map</span>
+        <span class="idx"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="depts">
+        <div class="dept">
+          <div class="dn">Department · A</div>
+          <div class="shelf"><b style="width:13px"></b><b style="width:16px"></b><b style="width:21px"></b><b style="width:14px"></b><b style="width:20px"></b></div>
+          <div class="shelf"><b style="width:18px"></b><b style="width:17px"></b><b style="width:15px"></b><b style="width:13px"></b></div>
+          <div class="shelf"><b style="width:13px"></b><b style="width:14px"></b><b style="width:19px"></b><b style="width:21px"></b><b style="width:16px"></b></div>
+        </div>
+        <div class="dept">
+          <div class="dn">Department · B</div>
+          <div class="shelf"><b style="width:16px"></b><b style="width:21px"></b><b style="width:19px"></b><b style="width:13px"></b></div>
+          <div class="shelf"><b style="width:17px"></b><b style="width:15px"></b><b style="width:20px"></b><b style="width:18px"></b><b style="width:13px"></b></div>
+          <div class="shelf"><b style="width:14px"></b><b style="width:13px"></b><b style="width:18px"></b></div>
+        </div>
+        <div class="dept">
+          <div class="dn">Department · C</div>
+          <div class="shelf"><b style="width:20px"></b><b style="width:21px"></b><b style="width:15px"></b><b style="width:13px"></b><b style="width:18px"></b></div>
+          <div class="shelf"><b style="width:13px"></b><b style="width:16px"></b><b style="width:17px"></b></div>
+          <div class="shelf"><b style="width:18px"></b><b style="width:13px"></b><b style="width:14px"></b><b style="width:20px"></b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recorder r-up" style="--d:.55s">
+      <div class="rh"><span class="nm">Flight recorder</span></div>
+      <div class="pf">.plans/ — transaction log</div>
+      <div class="sub">each step writes · the next step reads</div>
+      <div class="log">
+        <div class="ln"><span class="ok">✓</span> step 01 — architect.plan</div>
+        <div class="ln"><span class="ok">✓</span> step 02 — builder.slice</div>
+        <div class="ln live"><span class="cur"></span> step 03 — inspector.verify</div>
+      </div>
+      <div class="resume">Crash mid-flight? The next session reads the recorder and <b>continues exactly where it stopped.</b></div>
+    </div>
+
+    <div class="statuscard r-up" style="--d:.72s">
+      <div class="sh"><span class="fn">pipeline_status.md</span><span class="cur2"></span><span class="role">the live cursor</span></div>
+      <div class="sd">knows the step, the persona, the mission, and what's next — <b>this is what the status line reads.</b></div>
+    </div>
+
+    <div class="foot9 r-fade" style="--d:.9s">retention policy · <span class="am">HOT/COLD AUTO-SWEEP EVERY 5 SESSIONS</span> — keeps the library lean, by design</div>
+  </section>
+
+  <!-- ============ SCENE 9b · ONE METHODOLOGY ============ -->
+  <section id="s9b" data-label="One Methodology">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="on">ONE METHODOLOGY</span>
+      <span class="am">● COST ↔ FREQUENCY</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Not one feature — a methodology</div>
+      <h2 class="r-up" style="--d:.12s">The cheaper it is, the more often it runs.</h2>
+      <p class="lede r-up" style="--d:.22s">Not one feature — a whole engineering methodology. How it <b>verifies</b> and how it <b>remembers</b>, governed by one law.</p>
+    </div>
+
+    <div class="meth">
+      <!-- the cost ↔ frequency axis -->
+      <div class="axis r-fade" style="--d:.34s">
+        <span class="end lo">Cheap · continuous</span>
+        <span class="mid">one law · cost ↔ frequency</span>
+        <span class="end hi">Expensive · rare</span>
+        <div class="bar"></div>
+      </div>
+
+      <!-- column guides: same cost tier across both disciplines -->
+      <div class="guides r-fade" style="--d:.42s">
+        <i style="left:4.76%"></i><i style="left:35.12%"></i><i style="left:65.48%"></i><i style="left:95.24%"></i>
+      </div>
+
+      <!-- VERIFY — the reliability discipline -->
+      <div class="track verify r-up" style="--d:.48s">
+        <div class="thd"><span class="tn">Verify</span><span class="td">the reliability discipline · runs the harnesses</span></div>
+        <svg class="conn" viewBox="0 0 1680 130" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="cf-axis" x1="0" y1="0" x2="1680" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#6FA6CC"></stop>
+              <stop offset="1" stop-color="#FF8A3D"></stop>
+            </linearGradient>
+          </defs>
+          <polyline points="80,14 590,44 1100,74 1600,104" fill="none" stroke="url(#cf-axis)" stroke-width="2.5"></polyline>
+          <circle cx="80" cy="14" r="7" fill="#6FA6CC"></circle>
+          <circle cx="590" cy="44" r="7" fill="#9C8FA4"></circle>
+          <circle cx="1100" cy="74" r="7" fill="#CB7B54"></circle>
+          <circle cx="1600" cy="104" r="7" fill="#FF8A3D"></circle>
+        </svg>
+        <div class="nd first" style="left:4.76%; top:74px"><div class="nm">~1,092 tests</div><div class="fq">every run</div></div>
+        <div class="nd" style="left:35.12%; top:104px"><div class="nm">2 commit gates</div><div class="fq">every commit</div></div>
+        <div class="nd" style="left:65.48%; top:134px"><div class="nm">Hygiene sweep</div><div class="fq">every 5 sessions</div></div>
+        <div class="nd last hi" style="left:95.24%; top:164px"><div class="nm">AI eval harness</div><div class="fq">every ~15 sessions</div></div>
+      </div>
+
+      <!-- REMEMBER — the memory discipline -->
+      <div class="track remember r-up" style="--d:.6s">
+        <div class="thd"><span class="tn">Remember</span><span class="td">the memory discipline · runs the library</span></div>
+        <svg class="conn" viewBox="0 0 1680 130" preserveAspectRatio="none">
+          <polyline points="80,14 590,44 1100,74 1600,104" fill="none" stroke="url(#cf-axis)" stroke-width="2.5"></polyline>
+          <circle cx="80" cy="14" r="7" fill="#6FA6CC"></circle>
+          <circle cx="590" cy="44" r="7" fill="#9C8FA4"></circle>
+          <circle cx="1100" cy="74" r="7" fill="#CB7B54"></circle>
+          <circle cx="1600" cy="104" r="7" fill="#FF8A3D"></circle>
+        </svg>
+        <div class="nd first" style="left:4.76%; top:74px"><div class="nm">.plans/ scratch</div><div class="fq">1 mission</div></div>
+        <div class="nd" style="left:35.12%; top:104px"><div class="nm">CHANGELOG</div><div class="fq">7 milestones</div></div>
+        <div class="nd" style="left:65.48%; top:134px"><div class="nm">Hot tiers</div><div class="fq">15 sessions</div></div>
+        <div class="nd last hi" style="left:95.24%; top:164px"><div class="nm">Cold archive</div><div class="fq">forever · fully indexed</div></div>
+      </div>
+    </div>
+
+    <div class="punch r-fade" style="--d:.78s">My two engineering worlds, running as one system — <b>verification and memory, on one law.</b></div>
+  </section>
+
+  <!-- ============ SCENE 9c · DAY 0 ============ -->
+  <section id="s9c" data-label="Day 0">
+    <div class="stage9c"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>DAY 0</span>
+      <span class="on">● ESTABLISH TRUTH FIRST</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Before anything runs</div>
+      <h2 class="r-up" style="--d:.12s">Day 0 — it interviews you.</h2>
+    </div>
+
+    <div class="row">
+      <div class="node r-up" style="--d:.35s">
+        <div class="box"><svg viewBox="0 0 64 64" fill="none" stroke="#6FA6CC" stroke-width="2"><circle cx="32" cy="24" r="13"/><path d="M12 56 Q32 36 52 56"/></svg></div>
+        <div class="cap">You</div>
+        <div class="sc">domain language · rules</div>
+      </div>
+      <div class="qa r-fade" style="--d:.7s">
+        <div class="q">› what does "batch" mean here?<span class="a"> → captured</span></div>
+        <div class="q">› what must never happen?<span class="a"> → captured</span></div>
+        <div class="q">› who signs off?<span class="a"> → captured</span></div>
+      </div>
+      <div class="node lib r-up" style="--d:1s">
+        <div class="box"><svg viewBox="0 0 64 64" fill="none" stroke="#FF8A3D" stroke-width="2"><rect x="16" y="12" width="32" height="40"/><line x1="24" y1="24" x2="40" y2="24"/><line x1="24" y1="32" x2="40" y2="32"/><line x1="24" y1="40" x2="34" y2="40"/></svg></div>
+        <div class="cap">The Library</div>
+        <div class="sc">source of truth</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 10 · THE HUMAN ============ -->
+  <section id="s10" data-label="The Human">
+    <div class="stage10"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="am">THE HUMAN</span>
+      <span>● THE BRAIN</span>
+    </div>
+
+    <div class="left10">
+      <div class="k r-up">Every check is itself an AI — just as fallible</div>
+      <h2 class="r-up" style="--d:.15s">The chain ends<br>with you.</h2>
+    </div>
+
+    <div class="chlabel r-fade" style="--d:.5s">fallible checks &nbsp;·&nbsp; then something that isn't a language model</div>
+    <div class="chain10">
+      <div class="ai r-scale" style="--d:.6s"><span class="d"></span><span class="t">AI check</span></div>
+      <div class="lnk r-fade" style="--d:.7s"></div>
+      <div class="ai r-scale" style="--d:.75s"><span class="d"></span><span class="t">AI check</span></div>
+      <div class="lnk r-fade" style="--d:.85s"></div>
+      <div class="ai r-scale" style="--d:.9s"><span class="d"></span><span class="t">AI check</span></div>
+      <div class="lnk r-fade" style="--d:1s"></div>
+      <div class="you r-scale" style="--d:1.1s"><span class="t">YOU</span><span class="s">the owner</span></div>
+    </div>
+
+    <div class="glass r-up" style="--d:.7s">
+      <div class="gl">⚠ EMERGENCY OVERRIDE</div>
+      <div class="lever"><div class="bar"></div></div>
+      <div class="gt">Break the glass.</div>
+      <div class="gs">Kill the whole pipeline — but the framework <b>forces the next session to clean up the debt</b> before moving on.</div>
+    </div>
+
+    <div class="foot10 r-up" style="--d:1.3s">Not a reviewer bolted on at the end. <b>You're the <span class="am">owner of the beast</span>.</b></div>
+  </section>
+
+  <!-- ============ SCENE 11 · POSITIONING + INFLUENCES ============ -->
+  <section id="s11" data-label="Positioning">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>POSITIONING</span>
+      <span class="on">● STANDING ON SHOULDERS</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Not the only way — a convergent one</div>
+      <h2 class="r-up" style="--d:.12s">A data pipeline for LLMs.</h2>
+    </div>
+
+    <div class="conv">
+      <div class="cols">
+        <div class="lin r-up" style="--d:.3s">
+          <div class="lh">Mechanical &amp; Reliability Engineering</div>
+          <div class="ls">marine · <b class="mthd">where I started</b></div>
+          <div class="lchips">
+            <span class="chip">Poka-yoke</span>
+            <span class="chip">FMEA</span>
+            <span class="chip">Defense-in-depth</span>
+            <span class="chip">Stop-the-line (Andon)</span>
+            <span class="chip">RCM / scheduled maintenance</span>
+          </div>
+        </div>
+        <div class="lin r-up" style="--d:.42s">
+          <div class="lh">Data &amp; Integration Engineering</div>
+          <div class="ls"><b class="mthd">what I do now</b></div>
+          <div class="lchips">
+            <span class="chip">Pipeline orchestration</span>
+            <span class="chip">Staged steps / child pipelines</span>
+            <span class="chip">Quality gates between stages</span>
+            <span class="chip">Retention / lifecycle policy</span>
+            <span class="chip">Idempotency</span>
+            <span class="chip">Transaction log (WAL) / checkpointing</span>
+          </div>
+        </div>
+      </div>
+
+      <svg class="funnel r-fade" style="--d:.6s" viewBox="0 0 1680 84" preserveAspectRatio="none">
+        <line x1="420" y1="2" x2="840" y2="66"></line>
+        <line x1="1260" y1="2" x2="840" y2="66"></line>
+        <polygon points="840,80 831,62 849,62"></polygon>
+      </svg>
+
+      <div class="lfe r-up" style="--d:.78s">
+        <div class="nm">LFE</div>
+        <div class="rd">where the <b>two worlds meet</b></div>
+      </div>
+      <div class="cap r-up" style="--d:.9s">a data pipeline for LLMs — <b>reliable at every step.</b></div>
+
+      <div class="sharp r-fade" style="--d:1.05s">
+        <span class="lab">+ sharpened by</span>
+        <span class="who"><b>Matt Pocock</b> — shaped several skills</span>
+        <span class="dot">·</span>
+        <span class="who"><b>Bryan Finster</b> — audited end-to-end, sharpened verification</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 11b · THE EVOLUTION ============ -->
+  <section id="s11b" data-label="The Evolution">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>THE EVOLUTION</span>
+      <span class="on">● EARNED, NOT INVENTED</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">A history, not a single sitting</div>
+      <h2 class="r-up" style="--d:.12s">Earned, not invented.</h2>
+    </div>
+
+    <div class="tl">
+      <div class="line r-grow" style="--w:100%; --d:.3s"></div>
+      <div class="nodes">
+        <div class="node up r-scale" style="--d:.4s">
+          <div class="card"><div class="ph">Spreadsheets → code</div><div class="pd">Excel · VBA · Power Query/BI · Python</div></div>
+          <div class="stem"></div><div class="dot"></div><div class="yr">start</div>
+        </div>
+        <div class="node dn r-scale" style="--d:.55s">
+          <div class="dot"></div><div class="stem"></div>
+          <div class="card"><div class="ph hasmark" style="display:flex;align-items:center"><img class="whmark" src="uploads/sidebar_wordmark.webp" alt="WealthHub.nl" style="height:46px;width:auto;object-fit:contain;flex:none;filter:drop-shadow(0 0 11px rgba(255,138,61,.55)) drop-shadow(0 2px 5px rgba(0,0,0,.45))"></div><div class="pd">my own financial product · releasing soon</div><div class="ps">building it with AI broke the old rules — and forced LFE</div></div><div class="yr">then</div>
+        </div>
+        <div class="node up r-scale" style="--d:.7s">
+          <div class="card"><div class="ph">Pipeline discipline</div><div class="pd">biotech data-engineering, applied to AI</div></div>
+          <div class="stem"></div><div class="dot"></div><div class="yr">→</div>
+        </div>
+        <div class="node dn r-scale" style="--d:.85s">
+          <div class="dot"></div><div class="stem"></div>
+          <div class="card"><div class="ph">LFE v1</div><div class="pd">shaped by Matt Pocock's skills · shared online</div></div><div class="yr">→</div>
+        </div>
+        <div class="node up r-scale" style="--d:1s">
+          <div class="card"><div class="ph">The audit</div><div class="pd">Bryan Finster reviewed it end-to-end · verification sharpened</div></div>
+          <div class="stem"></div><div class="dot"></div><div class="yr">→</div>
+        </div>
+        <div class="node dn last r-scale" style="--d:1.15s">
+          <div class="dot"></div><div class="stem"></div>
+          <div class="card"><div class="ph">Claude-LFE</div><div class="pd">runtime guardrails · built natively on Claude · open-sourced</div></div><div class="yr">now</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="botrow">
+      <div class="capstone r-up" style="--d:1.25s">
+        <span class="lf">Built using itself</span>
+        <span class="ct">every change ran through <b>the exact pipeline</b> — recorded in the commits, decisions, and tests.</span>
+      </div>
+    </div>
+    <div class="footcue r-fade" style="--d:1.1s">→ it's all in the repo: git tags · ADRs · tests</div>
+  </section>
+
+  <!-- ============ SCENE 11c · WHAT IT'S NOT ============ -->
+  <section id="s11c" data-label="What it's not">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>WHAT IT'S NOT</span>
+      <span class="am">● NAMING THE OVERHEAD</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">No pitch — the limits, plainly</div>
+      <h2 class="r-up" style="--d:.12s">What LFE is <span class="am">not.</span></h2>
+    </div>
+
+    <div class="notlist">
+      <div class="nrow r-up" style="--d:.34s"><span class="x">✕</span><span class="not">Not a speed boost</span><span class="dash">—</span><span class="qual">it's slower up front, on purpose</span></div>
+      <div class="nrow r-up" style="--d:.46s"><span class="x">✕</span><span class="not">Not autonomy</span><span class="dash">—</span><span class="qual">the human stays on the wheel</span></div>
+      <div class="nrow r-up" style="--d:.58s"><span class="x">✕</span><span class="not">Not a bigger model</span><span class="dash">—</span><span class="qual">it's discipline around the one you have</span></div>
+      <div class="nrow r-up" style="--d:.70s"><span class="x">✕</span><span class="not">Not magic</span><span class="dash">—</span><span class="qual">it's overhead you choose to pay</span></div>
+    </div>
+
+    <div class="kicker11c r-up" style="--d:.9s">If I don't name the cost, I'm pitching. <span class="am">So there it is.</span></div>
+  </section>
+
+  <!-- ============ SCENE 12 · THE HONEST TRADE-OFF ============ -->
+  <section id="s12" data-label="Trade-off">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>THE HONEST TRADE-OFF</span>
+      <span class="am">● RELIABILITY HAS A PRICE</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Let me be straight about the cost</div>
+      <h2 class="r-up" style="--d:.12s">The trade-off.</h2>
+    </div>
+
+    <div class="scale r-fade" style="--d:.4s">
+      <div class="beam"></div>
+      <div class="fulcrum"></div>
+      <div class="pan speed"><div class="wire"></div><div class="plate"><div class="lab">Speed</div><div class="sub">up-front</div></div></div>
+      <div class="pan rel"><div class="wire"></div><div class="plate"><div class="lab">Reliability</div><div class="sub">across dozens of sessions</div></div></div>
+    </div>
+    <div class="caption12 r-up" style="--d:.6s">Throwaway weekend prototype? <b>Overkill — don't use it.</b></div>
+
+    <div class="foot12 r-up" style="--d:.8s">Reliability has a price. <span class="am">I'm telling you the price.</span></div>
+  </section>
+
+  <!-- ============ SCENE 13 · DEMO ============ -->
+  <section id="s13" data-label="Demo">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="on">LIVE DEMO</span>
+      <span>● THE BEAST ON A LEASH</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">Screen capture</div>
+      <h2 class="r-up" style="--d:.12s">Watch me try to break it.</h2>
+    </div>
+
+    <div class="term r-up" style="--d:.35s">
+      <div class="tbar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="tt">/lfe-boot — session active</span>
+        <span class="stat">PIPELINE ▸ BUILD ▸ SLICE 2/4</span>
+      </div>
+      <div class="tbody">
+        <div class="plans">
+          <div class="ph">.plans/</div>
+          <div class="f"><span class="c">✓</span> 01-architect.plan</div>
+          <div class="f"><span class="c">✓</span> 02-builder.slice</div>
+          <div class="f"><span class="c">▸</span> 03-inspector.run</div>
+        </div>
+        <div class="out">
+          <div><span class="p">$</span> /lfe-boot <span class="dim"># status line knows exactly where it is</span></div>
+          <div><span class="p">$</span> run inspector.verify <span class="dim"># out of order</span></div>
+          <div class="wow">⨯ REFUSED — sequence rail. <b>Not a warning. A wall.</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="runsheet r-fade" style="--d:.7s">
+      <div class="beat"><span class="n">1</span> boot</div>
+      <div class="beat"><span class="n">2</span> declare</div>
+      <div class="beat key"><span class="n">3</span> refuse ◂ wow</div>
+      <div class="beat"><span class="n">4</span> inspect</div>
+      <div class="beat"><span class="n">5</span> archive</div>
+      <div class="beat"><span class="n">6</span> kill ▸ resume</div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 14 · ABOUT ME ============ -->
+  <section id="s14" data-label="About">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>ABOUT</span>
+      <span class="on">● PRODUCTION-REALIST</span>
+    </div>
+
+    <div class="card">
+      <div class="photo r-fade" style="--d:.3s"><img src="assets/about-stelios.png" alt="Stylianos on a tanker deck at sea"></div>
+      <div class="info">
+        <h3 class="r-up" style="--d:.35s">Stylianos Chiotis</h3>
+        <div class="role r-up" style="--d:.45s">Reshapes systems · Questions the defaults · Writes the playbook</div>
+        <div class="arc r-up" style="--d:.55s">
+          <span class="step">Marine Engineering</span><span class="sep">→</span>
+          <span class="step">Biotech / Genetics</span><span class="sep">→</span>
+          <span class="step">Agentic AI</span>
+        </div>
+        <div class="tagline r-up" style="--d:.65s">Bringing the zero-error reliability of marine engine rooms to enterprise data architecture</div>
+        <div class="certwrap r-fade" style="--d:.85s">
+          <div class="certcol">
+            <div class="certlabel">Reliability</div>
+            <div class="certs">
+              <span class="c">FMEA &amp; ISO 31000 (Risk)</span>
+              <span class="c">RCM (Reliability Analysis)</span>
+              <span class="c">Lean Six Sigma</span>
+            </div>
+          </div>
+          <div class="certcol">
+            <div class="certlabel">Data</div>
+            <div class="certs">
+              <span class="c">Microsoft | DP600 - PL300 - AZ900 - MO201</span>
+              <span class="c">Databricks D.E.</span>
+              <span class="c">C#13 Development &amp; .NET</span>
+            </div>
+            <a class="morecerts">+ more on LinkedIn</a>
+          </div>
+        </div>
+        <div class="links r-fade" style="--d:1s">
+          <a href="https://medium.com/@st.chiotis94" target="_blank" rel="noopener"><span>medium</span> @st.chiotis94<em class="cta">subscribe to<br>read more</em></a>
+          <a href="https://www.linkedin.com/in/stylianos-chiotis/" target="_blank" rel="noopener"><span>linkedin</span> /stylianos-chiotis<em class="cta">connect and<br>keep in touch</em></a>
+          <a href="https://github.com/StChiotis" target="_blank" rel="noopener"><span>github</span> /StChiotis<em class="cta">follow for what<br>comes next</em></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 15 · VISION + CTA ============ -->
+  <section id="s15" data-label="Vision">
+    <div class="stage15"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span class="am">VISION</span>
+      <span>● OPEN SOURCE · LET'S BUILD</span>
+    </div>
+
+    <div class="end15">
+      <div class="v15 r-up" style="--d:.3s"><span class="am">Reliability</span> is the destination.<br><span class="mut">Efficiency is how we walk each step.</span></div>
+
+      <div class="tease r-up" style="--d:.55s">clone it · try to break it · make it stronger</div>
+
+      <a class="repocta r-up" style="--d:.72s" href="https://github.com/StChiotis/claude-lfe" target="_blank" rel="noopener">
+        <span class="star">★</span>
+        <span class="repotxt">
+          <span class="rk">Star &amp; share the repo</span>
+          <span class="ru">github.com/StChiotis/claude-lfe</span>
+        </span>
+      </a>
+
+      <div class="endnote r-fade" style="--d:.92s">Claude-LFE is open source — built to serve all of us.</div>
+    </div>
+  </section>
+
+  <!-- ============ SCENE 16 · GO DEEPER (calm end-card) ============ -->
+  <section id="s16" data-label="Go Deeper">
+    <div class="schematic-grid"></div>
+    <div class="frame-marks lt rb"></div>
+    <div class="topbar">
+      <span>SCENE 16 — GO DEEPER</span>
+      <span>● OUTRO</span>
+    </div>
+    <div class="shead">
+      <div class="k r-up">How I think, not just how I build</div>
+      <h2 class="r-up" style="--d:.12s">Library-first isn't just for AI.</h2>
+    </div>
+
+    <div class="deeper">
+      <!-- the bridge — visually elevated -->
+      <a class="feat r-up" style="--d:.3s" href="https://ai.plainenglish.io/nocode-ai-powered-kms-your-best-bet-on-ai-today-ffac30e4b054?sk=55e2ac62435fe7dbc37a6b164c2cec3d" target="_blank" rel="noopener">
+        <div class="cover">
+          <img src="assets/cover-kms.webp" alt="No-Code AI-Powered KMS cover">
+        </div>
+        <div class="meta">
+          <span class="brow">The bridge</span>
+          <span class="ft">No-Code, AI-Powered KMS: Your Best Bet on AI Today</span>
+          <span class="fd">Library-first, applied to how I learn — across everything I read. LFE is the same method, pointed at an AI.</span>
+          <span class="src"><i class="fav"></i>medium.com<span class="dot">·</span>AI in Plain English</span>
+        </div>
+      </a>
+
+      <div class="andmore r-fade" style="--d:.46s">…and more</div>
+      <div class="supports">
+        <a class="sup r-up" style="--d:.54s" href="https://medium.com/modernizing-maintenance/mcp-and-iiot-an-industrial-guide-to-ai-driven-factories-2b711f55ee86?sk=b2508fbedc42c7af996926b9aec8b8f5" target="_blank" rel="noopener">
+          <div class="cover">
+            <img src="https://miro.medium.com/v2/resize:fit:853/1*fV3lb0tuHEfNhFdh0QRL_Q.png" alt="MCP and IIoT cover">
+          </div>
+          <div class="meta">
+            <span class="st">MCP and IIoT: An Industrial Guide to AI-Driven Factories</span>
+            <span class="sd">industrial reliability meets AI</span>
+            <span class="src"><i class="fav"></i>medium.com<span class="dot">·</span>8 min</span>
+          </div>
+        </a>
+        <a class="sup r-up" style="--d:.64s" href="https://blog.stackademic.com/data-strategy-why-what-and-how-4490612d9576" target="_blank" rel="noopener">
+          <div class="cover">
+            <img src="assets/cover-datastrategy.webp" alt="Data Strategy cover">
+          </div>
+          <div class="meta">
+            <span class="st">Data Strategy: Why, What &amp; How</span>
+            <span class="sd">the data foundation</span>
+            <span class="src"><i class="fav"></i>medium.com<span class="dot">·</span>Stackademic</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="deepfoot">
+      <div class="more r-fade" style="--d:.8s">More on Medium <span class="arr">→</span> <a href="https://medium.com/@st.chiotis94" target="_blank" rel="noopener"><b>@st.chiotis94</b></a></div>
+      <div class="thanks r-fade" style="--d:.92s">Thanks for watching...</div>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script>
+  // Per-slide entry animations: replay on every activation.
+  // Attach BEFORE the engine loads so we catch the initial 'init' slidechange.
+  const deck = document.querySelector('deck-stage');
+  function activate(slide, prev){
+    if (prev) prev.classList.remove('is-active');
+    if (!slide) return;
+    slide.classList.remove('is-active');
+    void slide.offsetWidth;          // force reflow → restart animations
+    slide.classList.add('is-active');
+  }
+  deck.addEventListener('slidechange', (e) => activate(e.detail.slide, e.detail.previousSlide));
+</script>
+<!-- ── Minimal navigation chrome: subtle side arrows + page reference ── -->
+<style>
+  .nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2147483400;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    color: #5A646E;                 /* --text-lo: quiet, just a guide */
+    opacity: 0.55;
+    transition: opacity .25s ease, color .25s ease, transform .25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-arrow svg { width: 26px; height: 26px; display: block; }
+  .nav-arrow.prev { left: 18px; }
+  .nav-arrow.next { right: 18px; }
+  .nav-arrow:hover { opacity: 1; color: #99A3AD; }   /* --text-mid */
+  .nav-arrow:focus { outline: none; }
+  .nav-arrow:focus-visible { outline: none; color: #99A3AD; opacity: 1; }
+  .nav-arrow.prev:hover { transform: translateY(-50%) translateX(-2px); }
+  .nav-arrow.next:hover { transform: translateY(-50%) translateX(2px); }
+  .nav-arrow[disabled] { opacity: 0.12; cursor: default; pointer-events: none; }
+
+  .page-ref {
+    position: fixed;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    z-index: 2147483400;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: #5A646E;                 /* --text-lo */
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+    pointer-events: none;
+  }
+  .page-ref .sep { color: #36404A; margin: 0 7px; }
+  .page-ref .total { color: #36404A; }
+
+  @media (max-width: 640px) {
+    .nav-arrow { width: 44px; height: 44px; }
+    .nav-arrow.prev { left: 6px; }
+    .nav-arrow.next { right: 6px; }
+  }
+</style>
+<button class="nav-arrow prev" type="button" aria-label="Previous slide">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4L7 12l8 8"/></svg>
+</button>
+<button class="nav-arrow next" type="button" aria-label="Next slide">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+</button>
+<div class="page-ref" aria-live="polite"><span class="cur">01</span><span class="sep">/</span><span class="total">01</span></div>
+
+<script src="scenes/image-slot.js"></script>
+<script src="deck-stage.js"></script>
+<script>
+  // Fallback: if the init event was missed, activate the first visible slide.
+  requestAnimationFrame(() => {
+    if (!document.querySelector('section.is-active')) {
+      activate(deck.querySelector('section:not([data-deck-skip])'), null);
+    }
+  });
+
+  // ── Minimal nav chrome wiring ──────────────────────────────────────
+  // Hide the deck's built-in bottom control cluster — we use our own
+  // subtle side arrows + page reference instead.
+  if (deck.shadowRoot) {
+    const hide = document.createElement('style');
+    hide.textContent = '.overlay{display:none!important;}';
+    deck.shadowRoot.appendChild(hide);
+  }
+
+  const prevBtn = document.querySelector('.nav-arrow.prev');
+  const nextBtn = document.querySelector('.nav-arrow.next');
+  const curEl   = document.querySelector('.page-ref .cur');
+  const totEl   = document.querySelector('.page-ref .total');
+  const pad2 = (n) => String(n).padStart(2, '0');
+
+  let navIndex = 0, navTotal = 1;
+  function syncNav(index, total) {
+    navIndex = index; navTotal = total;
+    if (curEl) curEl.textContent = pad2(index + 1);
+    if (totEl) totEl.textContent = pad2(total);
+    if (prevBtn) prevBtn.disabled = index <= 0;
+    if (nextBtn) nextBtn.disabled = index >= total - 1;
+  }
+
+  deck.addEventListener('slidechange', (e) => syncNav(e.detail.index, e.detail.total));
+  prevBtn.addEventListener('click', () => deck.goTo(Math.max(0, navIndex - 1)));
+  nextBtn.addEventListener('click', () => deck.goTo(Math.min(navTotal - 1, navIndex + 1)));
+
+  // The initial 'init' slidechange fires before this script runs, so seed
+  // the counter from the current DOM state once on load.
+  requestAnimationFrame(() => {
+    const slides = [...deck.querySelectorAll(':scope > section')];
+    const active = deck.querySelector(':scope > section[data-deck-active]');
+    syncNav(active ? Math.max(0, slides.indexOf(active)) : 0, slides.length || 1);
+  });
+</script>
+
+<script>
+  // Guided hand: on entering the About slide, a hand glides in and taps each
+  // social CTA in turn, then leaves. Replays on every (re)activation.
+  (function () {
+    const about = document.getElementById('s14');
+    if (!about) return;
+    let timers = [];
+    const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
+    function removeHand() { clearTimers(); about.querySelectorAll('.handcursor').forEach(h => h.remove());
+      about.querySelectorAll('.links a.cta-hit').forEach(a => a.classList.remove('cta-hit')); }
+
+    function runHand() {
+      removeHand();
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const ctas = [...about.querySelectorAll('.links a .cta')];
+      if (!ctas.length) return;
+      const sec = about.getBoundingClientRect();
+      const scale = sec.width / 1920 || 1;
+      const hand = document.createElement('div');
+      hand.className = 'handcursor';
+      hand.innerHTML =
+        '<div class="ring"></div>' +
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+          '<path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74 0-2.49-2.01-4.5-4.5-4.5S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.92-1.38z" fill="#f7f4ee" stroke="#0a0a0c" stroke-width="1.1" stroke-linejoin="round"/>' +
+        '</svg>';
+      about.appendChild(hand);
+
+      const pts = ctas.map(c => {
+        const r = c.getBoundingClientRect();
+        return { x: (r.left - sec.left) / scale + (r.width / scale) * 0.52,
+                 y: (r.top - sec.top) / scale + (r.height / scale) * 0.5 };
+      });
+
+      // start: drift in from below-left of the first target
+      hand.style.left = (pts[0].x - 90) + 'px';
+      hand.style.top = (pts[0].y + 110) + 'px';
+      const STEP = 1150, START = 350;
+      timers.push(setTimeout(() => { hand.style.opacity = '1'; }, 80));
+
+      pts.forEach((p, i) => {
+        const base = START + i * STEP;
+        timers.push(setTimeout(() => { hand.style.left = p.x + 'px'; hand.style.top = p.y + 'px'; }, base));
+        timers.push(setTimeout(() => { hand.classList.add('press'); ctas[i].closest('a').classList.add('cta-hit'); }, base + 470));
+        timers.push(setTimeout(() => { hand.classList.remove('press'); }, base + 720));
+        timers.push(setTimeout(() => { ctas[i].closest('a').classList.remove('cta-hit'); }, base + 980));
+      });
+
+      const end = START + pts.length * STEP;
+      timers.push(setTimeout(() => {
+        hand.style.left = (pts[pts.length - 1].x + 70) + 'px';
+        hand.style.top = (pts[pts.length - 1].y + 120) + 'px';
+        hand.style.opacity = '0';
+      }, end));
+      timers.push(setTimeout(removeHand, end + 700));
+    }
+
+    deck.addEventListener('slidechange', (e) => {
+      if (e.detail.slide === about) timers.push(setTimeout(runHand, 1500));
+      else removeHand();
+    });
+    // catch the case where About is the initial slide
+    requestAnimationFrame(() => { if (about.classList.contains('is-active')) timers.push(setTimeout(runHand, 1500)); });
+  })();
+</script>
+
+</body>
+</html>

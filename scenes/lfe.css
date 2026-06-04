@@ -1,0 +1,98 @@
+/* Claude-LFE — shared design system
+   Engine-room industrial base · ember accent · steel-blue diagrams */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* engine-room blacks */
+  --ink-0: #080B0D;
+  --ink-1: #0E1217;
+  --ink-2: #151B21;
+  --ink-3: #1D242C;
+  --line:  #29333D;
+  --line-soft: #1B232B;
+
+  /* accents */
+  --amber: #FF8A3D;
+  --amber-hot: #FFB070;
+  --amber-dim: #7E4A26;
+  --amber-glow: rgba(255,138,61,0.55);
+
+  --steel: #6FA6CC;
+  --steel-dim: #3B5468;
+  --steel-soft: #243643;
+
+  /* text — warm whites, cool greys */
+  --text-hi: #ECE7DF;
+  --text-mid: #99A3AD;
+  --text-lo: #5A646E;
+
+  --danger: #E8623A;
+
+  --sans: 'Archivo', sans-serif;
+  --exp: 'Archivo Expanded', 'Archivo', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 100%; height: 100%; }
+
+.stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background: var(--ink-1);
+  color: var(--text-hi);
+  font-family: var(--sans);
+  overflow: hidden;
+}
+
+/* subtle engine-room machined texture / vignette */
+.grain::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,138,61,0.04), transparent 55%),
+    radial-gradient(140% 120% at 50% 120%, rgba(0,0,0,0.55), transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* eyebrow / mono kicker */
+.kicker {
+  font-family: var(--mono);
+  font-size: 22px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 500;
+}
+.kicker.steel { color: var(--steel); }
+.kicker.mute  { color: var(--text-lo); }
+
+.headline {
+  font-family: var(--exp);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: var(--text-hi);
+}
+
+.sub {
+  font-family: var(--sans);
+  color: var(--text-mid);
+  font-weight: 400;
+}
+
+.mono { font-family: var(--mono); }
+
+/* hairline schematic grid */
+.schematic-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(120% 100% at 50% 50%, #000 40%, transparent 90%);
+  opacity: 0.5;
+}
