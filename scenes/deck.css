@@ -668,7 +668,7 @@ section{
 #s11b .thumb .frame .l2{ font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--steel); }
 #s11b .thumb .cap{ font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--text-lo); margin-top:6px; text-align:center; opacity:.8; }
 #s11b .node .stem{ position:absolute; left:50%; width:1.5px; background:var(--steel-soft); transform:translateX(-50%); }
-/* product milestone — branded inline beside the card title */
+/* WealthHub milestone — branded inline beside the card title */
 #s11b .ph.hasmark{ display:flex; align-items:center; gap:9px; }
 #s11b .ph .whmark{ width:34px; height:34px; object-fit:contain; flex:none; filter:drop-shadow(0 2px 6px rgba(0,0,0,.5)); }
 #s11b .node.up .stem{ bottom:178px; height:26px; } #s11b .node.dn .stem{ top:178px; height:32px; }
