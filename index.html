@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.5">
 <meta name="description" content="Claude-LFE is an open-source reliability engineering framework — making Claude behave consistently, session after session.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stchiotis.github.io/claude-lfe.intro/">
@@ -1260,6 +1260,43 @@
   .beacon     { animation: attn-beacon     2.2s ease; }
   .beacon svg { animation: attn-beacon-svg 2.2s ease; }
 
+  /* Portrait mobile — rotate hint */
+  .rotate-hint {
+    display: none;
+    position: fixed;
+    bottom: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2147483401;
+    background: rgba(10, 14, 18, .92);
+    border: 1px solid rgba(240, 192, 64, .35);
+    border-radius: 20px;
+    padding: 8px 12px 8px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: rgba(240, 192, 64, .85);
+    white-space: nowrap;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: auto;
+  }
+  @media (orientation: portrait) and (max-width: 768px) {
+    .rotate-hint:not(.dismissed) { display: flex; }
+  }
+  .rotate-hint__x {
+    background: none;
+    border: none;
+    padding: 0 3px;
+    font-size: 13px;
+    line-height: 1;
+    color: #5A646E;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   /* Vision slide — golden shine sweeps the repo CTA banner on entry */
   #s15 .repocta { position: relative; overflow: hidden; }
   #s15 .repocta .shine {
@@ -1300,6 +1337,11 @@
 </button>
 <div class="slide-menu" id="slideMenu" aria-hidden="true">
   <div class="slide-menu__inner" id="slideMenuInner"></div>
+</div>
+
+<div class="rotate-hint" id="rotateHint">
+  ↻ &nbsp;BEST IN LANDSCAPE
+  <button class="rotate-hint__x" id="rotateHintClose" aria-label="Dismiss">✕</button>
 </div>
 
 <script src="scenes/image-slot.js"></script>
@@ -1473,6 +1515,31 @@
         deck.goTo(Math.min(navTotal - 1, navIndex + 1));
       }
     });
+  })();
+
+  // ── Touch swipe navigation: swipe left = next, swipe right = prev ──
+  (function () {
+    let sx = 0, sy = 0;
+    const MIN = 50;
+    document.addEventListener('touchstart', (e) => {
+      sx = e.touches[0].clientX;
+      sy = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchend', (e) => {
+      const menu = document.getElementById('slideMenu');
+      if (menu && menu.classList.contains('open')) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      const dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) < MIN || Math.abs(dx) < Math.abs(dy)) return;
+      deck.goTo(dx < 0 ? Math.min(navTotal - 1, navIndex + 1) : Math.max(0, navIndex - 1));
+    }, { passive: true });
+  })();
+
+  // ── Portrait rotate hint dismiss ──
+  (function () {
+    const btn  = document.getElementById('rotateHintClose');
+    const hint = document.getElementById('rotateHint');
+    if (btn && hint) btn.addEventListener('click', () => hint.classList.add('dismissed'));
   })();
 </script>
 
