@@ -1260,11 +1260,13 @@
   .beacon     { animation: attn-beacon     2.2s ease; }
   .beacon svg { animation: attn-beacon-svg 2.2s ease; }
 
-  /* Needle pivot fix: override deck.css fill-box which misbehaves on mobile WebKit.
-     view-box + 50% 50% maps reliably to (100,100) SVG units = gauge centre on all browsers. */
+  /* Needle FOUC fix: deck.css static state is rotate(96deg) ≈ horizontal line, which paints
+     for 1-2 frames on mobile before JS adds .is-active and fill-mode:both kicks in.
+     Pre-set to the animation's 0% keyframe (-114deg) so there is nothing to flash. */
   #s1 .needle {
     transform-box: view-box;
     transform-origin: 50% 50%;
+    transform: rotate(-114deg);
   }
 
   /* Portrait mobile — rotate hint */
