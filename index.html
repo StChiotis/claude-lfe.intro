@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Claude-LFE is an open-source reliability engineering framework — making Claude behave consistently, session after session.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stchiotis.github.io/claude-lfe.intro/">
+<meta property="og:title" content="Claude-LFE — Library-First Engineering for AI">
+<meta property="og:description" content="A 3-layer reliability framework (Protocol · Enforcement · Provenance) that tames Claude for production.">
+<meta property="og:image" content="https://stchiotis.github.io/claude-lfe.intro/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude-LFE — Library-First Engineering for AI">
+<meta name="twitter:description" content="A 3-layer reliability framework that makes Claude reliable, session after session. Open source.">
+<meta name="twitter:image" content="https://stchiotis.github.io/claude-lfe.intro/assets/og-cover.png">
+<link rel="canonical" href="https://stchiotis.github.io/claude-lfe.intro/">
 <title>Claude-LFE — Introduction</title>
 <link rel="stylesheet" href="scenes/lfe.css?v=2">
 <link rel="stylesheet" href="scenes/deck.css?v=26">
@@ -12,7 +25,7 @@
 <deck-stage width="1920" height="1080" no-rail>
 
   <!-- ============ SCENE 1 · TITLE (end-card) ============ -->
-  <section id="s1" data-label="Title">
+  <section id="s1" data-label="Intro">
     <div class="stage1 grain"></div>
     <div class="schematic-grid"></div>
     <div class="frame-marks lt rb"></div>
@@ -884,7 +897,7 @@
     <div class="schematic-grid"></div>
     <div class="frame-marks lt rb"></div>
     <div class="topbar">
-      <span>SCENE 14b — WHAT'S NEXT</span>
+      <span>WHAT'S NEXT</span>
       <span class="am">● VALIDATING · NOT PROMISING</span>
     </div>
     <div class="shead">
@@ -1030,7 +1043,7 @@
     <div class="schematic-grid"></div>
     <div class="frame-marks lt rb"></div>
     <div class="topbar">
-      <span>SCENE 16 — GO DEEPER</span>
+      <span>GO DEEPER</span>
       <span>● OUTRO</span>
     </div>
     <div class="shead">
@@ -1151,6 +1164,128 @@
     .nav-arrow.prev { left: 6px; }
     .nav-arrow.next { right: 6px; }
   }
+
+  /* Slide label in page counter */
+  .page-ref .lbl {
+    color: #42505A;
+    margin: 0 8px 0 6px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .page-ref .lbl:not(:empty)::before { content: "— "; }
+
+  /* Slides menu button */
+  .menu-btn {
+    position: fixed;
+    left: 18px;
+    bottom: 26px;
+    z-index: 2147483400;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid #29333D;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #5A646E;
+    opacity: 0.7;
+    transition: opacity .2s, color .2s, border-color .2s;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+  }
+  .menu-btn svg { width: 18px; height: 18px; display: block; }
+  .menu-btn:hover, .menu-btn[aria-expanded="true"] { opacity: 1; color: #99A3AD; border-color: #5A646E; }
+  .menu-btn:focus { outline: none; }
+  .menu-btn:focus-visible { outline: 2px solid #5A646E; outline-offset: 2px; }
+
+  /* Slides menu panel */
+  .slide-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483399;
+    background: rgba(8, 11, 13, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  .slide-menu.open { opacity: 1; pointer-events: auto; }
+  .slide-menu__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: min(90vw, 960px);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 32px;
+  }
+  .slide-menu__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(21, 27, 33, 0.8);
+    border: 1px solid #1B232B;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #5A646E;
+    text-align: left;
+    transition: background .15s, border-color .15s, color .15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .slide-menu__item:hover { background: rgba(29, 36, 44, .95); border-color: #29333D; color: #99A3AD; }
+  .slide-menu__item.active { border-color: #3B5468; color: #6FA6CC; }
+  .slide-menu__item .n { color: #36404A; flex: none; width: 24px; }
+  .slide-menu__item.active .n { color: #3B5468; }
+
+  /* Beacon — glows the SVG lines amber on slide 1, no box around the button */
+  @keyframes attn-beacon {
+    0%, 100% { color: inherit; opacity: inherit; }
+    18%, 82%  { color: #F0C040; opacity: 1; }
+  }
+  @keyframes attn-beacon-svg {
+    0%, 100% { transform: scale(1);    filter: none; }
+    18%, 82%  { transform: scale(1.22); filter: drop-shadow(0 0 6px rgba(240,192,64,.8)); }
+  }
+  .beacon     { animation: attn-beacon     2.2s ease; }
+  .beacon svg { animation: attn-beacon-svg 2.2s ease; }
+
+  /* Vision slide — golden shine sweeps the repo CTA banner on entry */
+  #s15 .repocta { position: relative; overflow: hidden; }
+  #s15 .repocta .shine {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 40%;
+    height: 120%;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(240, 192, 64, 0.0) 20%,
+      rgba(240, 192, 64, 0.6) 50%,
+      rgba(240, 192, 64, 0.0) 80%,
+      transparent 100%
+    );
+    transform: translateX(-120%) skewX(-8deg);
+    pointer-events: none;
+  }
+  @keyframes repo-shine {
+    from { transform: translateX(-120%) skewX(-8deg); }
+    to   { transform: translateX(320%)  skewX(-8deg); }
+  }
+  #s15 .repocta.shining .shine {
+    animation: repo-shine 1.0s ease-out forwards;
+  }
 </style>
 <button class="nav-arrow prev" type="button" aria-label="Previous slide">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4L7 12l8 8"/></svg>
@@ -1158,7 +1293,14 @@
 <button class="nav-arrow next" type="button" aria-label="Next slide">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
 </button>
-<div class="page-ref" aria-live="polite"><span class="cur">01</span><span class="sep">/</span><span class="total">01</span></div>
+<div class="page-ref" aria-live="polite"><span class="cur">01</span><span class="lbl"></span><span class="sep">/</span><span class="total">01</span></div>
+
+<button class="menu-btn" id="menuBtn" type="button" aria-label="All slides" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<div class="slide-menu" id="slideMenu" aria-hidden="true">
+  <div class="slide-menu__inner" id="slideMenuInner"></div>
+</div>
 
 <script src="scenes/image-slot.js"></script>
 <script src="deck-stage.js"></script>
@@ -1183,28 +1325,155 @@
   const nextBtn = document.querySelector('.nav-arrow.next');
   const curEl   = document.querySelector('.page-ref .cur');
   const totEl   = document.querySelector('.page-ref .total');
+  const lblEl   = document.querySelector('.page-ref .lbl');
   const pad2 = (n) => String(n).padStart(2, '0');
 
   let navIndex = 0, navTotal = 1;
-  function syncNav(index, total) {
+  function syncNav(index, total, slide) {
     navIndex = index; navTotal = total;
     if (curEl) curEl.textContent = pad2(index + 1);
     if (totEl) totEl.textContent = pad2(total);
+    if (lblEl) lblEl.textContent = slide ? (slide.getAttribute('data-label') || '') : '';
     if (prevBtn) prevBtn.disabled = index <= 0;
     if (nextBtn) nextBtn.disabled = index >= total - 1;
   }
 
-  deck.addEventListener('slidechange', (e) => syncNav(e.detail.index, e.detail.total));
+  // Beacon: glows the SVG lines in the menu button + next arrow when on slide 1
+  let _beaconTimer = null;
+  function flashBeacon() {
+    clearTimeout(_beaconTimer);
+    const targets = [document.getElementById('menuBtn'), document.querySelector('.nav-arrow.next')];
+    targets.forEach(el => { if (!el) return; el.classList.remove('beacon'); void el.offsetWidth; el.classList.add('beacon'); });
+    _beaconTimer = setTimeout(() => targets.forEach(el => el && el.classList.remove('beacon')), 2400);
+  }
+
+  deck.addEventListener('slidechange', (e) => {
+    syncNav(e.detail.index, e.detail.total, e.detail.slide);
+    if (e.detail.index === 0) setTimeout(flashBeacon, 600);
+  });
   prevBtn.addEventListener('click', () => deck.goTo(Math.max(0, navIndex - 1)));
   nextBtn.addEventListener('click', () => deck.goTo(Math.min(navTotal - 1, navIndex + 1)));
 
-  // The initial 'init' slidechange fires before this script runs, so seed
-  // the counter from the current DOM state once on load.
+  // Seed the counter from current DOM state once on load (init slidechange fires before this script).
   requestAnimationFrame(() => {
     const slides = [...deck.querySelectorAll(':scope > section')];
     const active = deck.querySelector(':scope > section[data-deck-active]');
-    syncNav(active ? Math.max(0, slides.indexOf(active)) : 0, slides.length || 1);
+    const idx = active ? Math.max(0, slides.indexOf(active)) : 0;
+    syncNav(idx, slides.length || 1, active);
+    if (idx === 0) setTimeout(flashBeacon, 600);
   });
+
+  // ── Hash routing: write friendly #sectionId on navigation, restore on load ──
+  deck.addEventListener('slidechange', (e) => {
+    if (e.detail.slide && e.detail.slide.id) {
+      try { history.replaceState(null, '', '#' + e.detail.slide.id); } catch (_) {}
+    }
+  });
+  (function () {
+    const initHash = (location.hash || '').replace('#', '');
+    if (initHash && /^[a-zA-Z]/.test(initHash)) {
+      requestAnimationFrame(() => {
+        const target = document.getElementById(initHash);
+        if (!target) return;
+        const slides = [...deck.querySelectorAll(':scope > section')];
+        const idx = slides.indexOf(target);
+        if (idx >= 0) deck.goTo(idx);
+      });
+    }
+  })();
+
+  // ── Slides menu: overview overlay, click any label to jump ──
+  (function () {
+    const menuBtn   = document.getElementById('menuBtn');
+    const slideMenu = document.getElementById('slideMenu');
+    const menuInner = document.getElementById('slideMenuInner');
+    if (!menuBtn || !slideMenu || !menuInner) return;
+
+    let menuOpen = false;
+    let menuItems = [];
+    let currentMenuIndex = 0;
+
+    function buildMenu(slides) {
+      menuInner.innerHTML = '';
+      menuItems = [];
+      slides.forEach((slide, i) => {
+        const label = slide.getAttribute('data-label') || 'Slide';
+        const btn = document.createElement('button');
+        btn.className = 'slide-menu__item';
+        btn.type = 'button';
+        btn.innerHTML = '<span class="n">' + pad2(i + 1) + '</span><span>' + label + '</span>';
+        btn.addEventListener('click', () => { deck.goTo(i); closeMenu(); });
+        menuInner.appendChild(btn);
+        menuItems.push(btn);
+      });
+      updateActive(currentMenuIndex);
+    }
+
+    function updateActive(index) {
+      currentMenuIndex = index;
+      menuItems.forEach((item, i) => item.classList.toggle('active', i === index));
+    }
+
+    function openMenu() {
+      menuOpen = true;
+      slideMenu.classList.add('open');
+      slideMenu.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      if (menuItems[currentMenuIndex]) menuItems[currentMenuIndex].scrollIntoView({ block: 'nearest' });
+    }
+
+    function closeMenu() {
+      menuOpen = false;
+      slideMenu.classList.remove('open');
+      slideMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.focus();
+    }
+
+    menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
+    slideMenu.addEventListener('click', (e) => { if (e.target === slideMenu) closeMenu(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOpen) { closeMenu(); e.stopPropagation(); }
+    }, true);
+
+    deck.addEventListener('slidechange', (e) => {
+      if (menuItems.length === 0) {
+        buildMenu([...deck.querySelectorAll(':scope > section')]);
+      }
+      updateActive(e.detail.index);
+    });
+
+    requestAnimationFrame(() => {
+      if (menuItems.length === 0) {
+        const slides = [...deck.querySelectorAll(':scope > section')];
+        if (slides.length) buildMenu(slides);
+      }
+    });
+  })();
+
+  // ── Half-screen click-to-navigate: left half = prev, right half = next ──
+  // Skips if the click lands on/inside any interactive element (links, buttons, etc.)
+  // or if the slides menu is open.
+  (function () {
+    const SKIP = new Set(['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'VIDEO', 'AUDIO']);
+    document.addEventListener('click', (e) => {
+      if (e.defaultPrevented) return;
+      const menu = document.getElementById('slideMenu');
+      if (menu && menu.classList.contains('open')) return;
+      if (window.getSelection && window.getSelection().toString().length > 0) return;
+      const path = e.composedPath ? e.composedPath() : [e.target];
+      for (const el of path) {
+        if (!(el instanceof Element)) continue;
+        if (SKIP.has(el.tagName) || el.getAttribute('role') === 'button') return;
+        if (el === document.body) break;
+      }
+      if (e.clientX < window.innerWidth / 2) {
+        deck.goTo(Math.max(0, navIndex - 1));
+      } else {
+        deck.goTo(Math.min(navTotal - 1, navIndex + 1));
+      }
+    });
+  })();
 </script>
 
 <script>
@@ -1269,6 +1538,39 @@
     });
     // catch the case where About is the initial slide
     requestAnimationFrame(() => { if (about.classList.contains('is-active')) timers.push(setTimeout(runHand, 1500)); });
+  })();
+
+  // ── Vision slide — golden shine sweeps the repo CTA on entry ──
+  (function () {
+    const vision = document.getElementById('s15');
+    if (!vision) return;
+    let shineTimer = null;
+
+    function runShine() {
+      clearTimeout(shineTimer);
+      const cta = vision.querySelector('.repocta');
+      if (!cta) return;
+      if (!cta.querySelector('.shine')) {
+        const el = document.createElement('div');
+        el.className = 'shine';
+        cta.appendChild(el);
+      }
+      cta.classList.remove('shining');
+      void cta.offsetWidth;
+      // Trigger after the banner's own r-up reveal (--d:.72s) has finished
+      shineTimer = setTimeout(() => {
+        cta.classList.add('shining');
+        setTimeout(() => cta.classList.remove('shining'), 1100);
+      }, 1400);
+    }
+
+    deck.addEventListener('slidechange', (e) => {
+      if (e.detail.slide === vision) runShine();
+      else clearTimeout(shineTimer);
+    });
+    requestAnimationFrame(() => {
+      if (vision.classList.contains('is-active')) runShine();
+    });
   })();
 </script>
 
