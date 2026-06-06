@@ -1260,6 +1260,13 @@
   .beacon     { animation: attn-beacon     2.2s ease; }
   .beacon svg { animation: attn-beacon-svg 2.2s ease; }
 
+  /* Needle pivot fix: override deck.css fill-box which misbehaves on mobile WebKit.
+     view-box + 50% 50% maps reliably to (100,100) SVG units = gauge centre on all browsers. */
+  #s1 .needle {
+    transform-box: view-box;
+    transform-origin: 50% 50%;
+  }
+
   /* Portrait mobile — rotate hint */
   .rotate-hint {
     display: none;
