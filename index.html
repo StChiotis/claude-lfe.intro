@@ -1260,13 +1260,19 @@
   .beacon     { animation: attn-beacon     2.2s ease; }
   .beacon svg { animation: attn-beacon-svg 2.2s ease; }
 
-  /* Needle FOUC fix: deck.css static state is rotate(96deg) ≈ horizontal line, which paints
-     for 1-2 frames on mobile before JS adds .is-active and fill-mode:both kicks in.
-     Pre-set to the animation's 0% keyframe (-114deg) so there is nothing to flash. */
+  /* Needle FOUC fix: pre-set to the animation's 0% keyframe so nothing flashes on load. */
   #s1 .needle {
     transform-box: view-box;
     transform-origin: 50% 50%;
     transform: rotate(-114deg);
+  }
+
+  /* Mobile compositing fix: CSS filter on the gauge SVG + CSS animation on a child <g> creates
+     two separate GPU layers whose seam shows as a rendering artifact on mobile WebKit.
+     Removing the filter collapses them into one layer; will-change pre-allocates it. */
+  @media (max-width: 1024px) {
+    #s1 svg.gauge { filter: none; }
+    #s1 .needle   { will-change: transform; }
   }
 
   /* Portrait mobile — rotate hint */
