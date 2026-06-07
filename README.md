@@ -3,7 +3,7 @@
 An interactive, single-page introduction to **Claude-LFE** — built as a self-contained HTML presentation (no build step, no dependencies beyond a web font).
 
 ### ▶︎ Live deck
-**https://stchiotis.github.io/claude-lfe.intro/**
+**https://stchiotis.github.io/Claude-LFE.intro/**
 
 Navigate with the arrow keys, on-screen controls, or swipe. Best viewed full-screen.
 
