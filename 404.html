@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 &middot; Off the line &mdash; Claude-LFE</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Archivo+Expanded:wght@700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-0:#080B0D; --ink-1:#0E1217; --line:#29333D;
+    --amber:#FF8A3D; --amber-hot:#FFB070; --amber-glow:rgba(255,138,61,.55);
+    --text-hi:#ECE7DF; --text-mid:#99A3AD; --text-lo:#5A646E;
+    --sans:'Archivo',sans-serif;
+    --exp:'Archivo Expanded','Archivo',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:var(--sans);
+    background:radial-gradient(120% 80% at 50% 0%, #11171d 0%, var(--ink-0) 60%), var(--ink-0);
+    color:var(--text-hi);
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; padding:2rem; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  body::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:48px 48px; opacity:.06;
+    -webkit-mask-image:radial-gradient(80% 60% at 50% 40%, #000 30%, transparent 80%);
+    mask-image:radial-gradient(80% 60% at 50% 40%, #000 30%, transparent 80%);
+  }
+  .wrap{position:relative; max-width:560px;}
+  .eyebrow{
+    font-family:var(--mono); font-size:.8rem; letter-spacing:.28em;
+    text-transform:uppercase; color:var(--amber); margin-bottom:1.4rem;
+  }
+  .code{
+    font-family:var(--exp); font-weight:800;
+    font-size:clamp(5rem,22vw,11rem); line-height:.9;
+    text-shadow:0 0 40px var(--amber-glow); letter-spacing:.02em;
+  }
+  h1{
+    font-family:var(--exp); font-weight:700;
+    font-size:clamp(1.2rem,4vw,1.7rem); margin-top:1rem;
+  }
+  p{ color:var(--text-mid); font-size:1rem; line-height:1.6; margin-top:.9rem; }
+  .cta{
+    display:inline-flex; align-items:center; gap:.5rem; margin-top:2.2rem;
+    padding:.85rem 1.5rem; font-family:var(--mono); font-size:.9rem;
+    font-weight:500; letter-spacing:.04em; color:var(--ink-0);
+    background:var(--amber); text-decoration:none; border-radius:2px;
+    transition:background .2s, transform .2s, box-shadow .2s;
+  }
+  .cta:hover{
+    background:var(--amber-hot); transform:translateY(-1px);
+    box-shadow:0 8px 30px var(--amber-glow);
+  }
+  .foot{
+    margin-top:2.4rem; font-family:var(--mono); font-size:.72rem;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--text-lo);
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="eyebrow">&#9679; Off the line</div>
+    <div class="code">404</div>
+    <h1>This path isn&rsquo;t part of the pipeline.</h1>
+    <p>The page you&rsquo;re after doesn&rsquo;t exist here &mdash; but the machine is still running.</p>
+    <a class="cta" href="https://stchiotis.github.io/Claude-LFE.intro/">&rarr; Back to the deck</a>
+    <div class="foot">Claude-LFE &middot; Introduction</div>
+  </main>
+</body>
+</html>
